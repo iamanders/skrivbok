@@ -1,0 +1,24 @@
+<div class="content__main content__main--login">
+
+	{{#if errorMessage}}
+		<div class="error">Wrong mail and/or password</div>
+	{{/if}}
+
+	<form {{action "authenticate" on="submit"}}>
+
+		<div class="row">
+			<label>Email address</label>
+			{{input value=identification placeholder="Email" autofocus="autofocus"}}
+		</div>
+
+		<div class="row">
+			<label>Password</label>
+			{{input value=password placeholder="Password" type="password"}}
+		</div>
+
+		<div class="row row-button">
+			<button type="submit" class="button">Login!</button>
+		</div>
+	</form>
+
+</div>

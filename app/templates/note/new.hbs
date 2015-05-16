@@ -1,0 +1,11 @@
+<div class="content__main content__main--note-show">
+
+	<h1>{{input value=model.title placeholder="Title" autofocus="autofocus"}}</h1>
+	{{textarea value=model.body placeholder="Body" autoresize=true rows=14}}
+
+	<br />
+	<br />
+
+	<button {{action "saveNote"}} class="button button--square button--square-wide"><i class="fa fa-check-circle"></i></button>
+	{{#link-to 'note.index' class="button button--square button--negative"}}<i class="fa fa-times-circle"></i>{{/link-to}}
+</div>

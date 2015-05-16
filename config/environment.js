@@ -1,4 +1,4 @@
-/* jshint node: true */
+ // jshint node: true
 
 module.exports = function(environment) {
   var ENV = {
@@ -42,6 +42,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['simple-auth'] = {
+    authorizer: 'authorizer:custom',
+  };
 
   return ENV;
 };

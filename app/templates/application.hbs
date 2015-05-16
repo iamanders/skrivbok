@@ -1,3 +1,13 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+<div class="header">
+	<ul>
+		<li>{{#link-to 'note' class='logo'}}Skrivbok{{/link-to}}</li>
+		{{#if session.isAuthenticated}}
+			<li>{{#link-to 'note.new'}}<i class="fa fa-plus-circle"></i> document{{/link-to}}</li>
+			<li class="right avatar">{{gravatar-image email=session.secure.mail size=50}}</li>
+			<li class="right"><a href="" {{ action 'invalidateSession' }}>Logout</a></li>
+		{{/if}}
+	</ul>
+</div>
+<div class="content">
+	{{outlet}}
+</div>

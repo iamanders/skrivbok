@@ -1,0 +1,14 @@
+<div class="content__main content__main--note-index">
+	<ul>
+		{{#each note in controller}}
+			<li>
+				<h2 title="{{format-date note.updated_at 'YYYY-MM-DD'}}">{{#link-to 'note.show' note.id}}{{note.title}} <small>{{format-date-ago note.updated_at}}</small>{{/link-to}}</h2>
+				<p>{{#link-to 'note.show' note.id}}{{note.body}}{{/link-to}}</p>
+			</li>
+		{{/each}}
+	</ul>
+</div>
+
+{{#link-to 'note.new' class="button button--square button--square-wide"}}<i class="fa fa fa-plus-circle"></i>{{/link-to}}
+
+{{outlet}}

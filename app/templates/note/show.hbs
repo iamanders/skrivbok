@@ -1,0 +1,13 @@
+<div class="content__main content__main--note-show">
+
+	<h1>{{input value=model.title focus-out="editDone"}}</h1>
+
+	{{textarea value=model.body focus-out="editDone" autoresize=true rows=14}}
+
+	<p class="date">Last updated {{format-date model.updated_at 'YYYY-MM-DD HH:mm'}}, created {{format-date model.created_at 'YYYY-MM-DD HH:MM'}}</p>
+
+	<hr />
+
+	{{#link-to 'note.index' class="button button--square"}}<i class="fa fa-chevron-circle-left"></i>{{/link-to}}
+	{{#link-to 'note.remove' model.id class="cancel"}}(remove){{/link-to}}
+</div>
